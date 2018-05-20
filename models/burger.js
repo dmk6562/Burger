@@ -7,20 +7,21 @@ var burger = {
       cb(res);
     });
   },
-  
-  insertOne: function(burger_name, cb){
-    orm.insertOne('burger_name', function(res){
+
+  insertOne: function(col, vals, cb){
+    orm.insertOne('burgers', col, vals, function(res){
         cb(res);
     });
 },
 
-updateOne: function(burger_id, cb){
-    orm.updateOne('burger_id', function(res){
+updateOne: function(objColsVals, condition, cb){
+    orm.updateOne('burgers', objColsVals, condition, function(res){
         cb(res);
     });
 }
 
 };
 
-// Export the database functions for the controller
+// Export 
 module.exports = burger;
+
