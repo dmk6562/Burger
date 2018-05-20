@@ -7,7 +7,7 @@ var burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get('/', function (req, res) {
-  res.redirect('/index');
+  res.render('/index');
 });
 
 // Index Page (displays all burgers)
@@ -23,7 +23,7 @@ router.get('/index', function (req, res) {
 //Creates a new burger
 router.post('/burger/create', function (req, res) {
   burger.insertOne(req.body.burger_name, function() {
-      res.redirect('/index');
+      res.render('/index');
   });
 });
 
