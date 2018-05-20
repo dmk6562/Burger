@@ -1,7 +1,7 @@
 //Dependencies
 var express = require("express");
 var bodyParser = require("body-parser");
-var methodOveride =require("method-overide");
+var methodOverride =require("method-override");
 
 var PORT = process.env.PORT || 8080;
 
