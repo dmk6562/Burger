@@ -11,12 +11,12 @@ router.get('/', function (req, res) {
 });
 
 // Index Page (displays all burgers)
-router.get('../views/index', function (req, res) {
+router.get('../views/index.handlebars', function (req, res) {
   burger.selectAll(function(data) {
       var hbsObject = { burgers: data };
 
       console.log(hbsObject);
-      res.render('../views/index', hbsObject);
+      res.render('../views/index.handlebars', hbsObject);
   });
 });
 
