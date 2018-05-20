@@ -6,9 +6,9 @@ var router = express.Router();
 var burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
-// router.get('/', function (req, res) {
-//   res.render('/index');
-// });
+router.get('/', function (req, res) {
+  res.render('/index');
+});
 
 // Index Page (displays all burgers)
 router.get('/index', function (req, res) {
