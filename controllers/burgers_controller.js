@@ -21,33 +21,33 @@ router.get('/index', function (req, res) {
 });
 
 
-router.post("/", function(req, res) {
-  burgers.create(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function() {
-    res.redirect("/");
-  });
-});
-
-router.put("/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
-  console.log("condition", condition);
-  burgers.update({devoured : req.body.devoured}, condition, function() {
-    res.redirect("/");
-  });
-});
-// //Creates a new burger
-// router.post('/burger/create', function (req, res) {
-//   burger.insertOne(req.body.burger_name, function() {
-//       res.redirect('/index');
+// router.post("/", function(req, res) {
+//   burgers.create(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function() {
+//     res.redirect("/");
 //   });
 // });
 
-
-// //Devours a Burger
-// router.post('/burger/eat/:id', function (req, res) {
-//   burger.updateOne(req.params.id, function() {
-//       res.redirect('/index');
+// router.put("/:id", function(req, res) {
+//   var condition = "id = " + req.params.id;
+//   console.log("condition", condition);
+//   burgers.update({devoured : req.body.devoured}, condition, function() {
+//     res.redirect("/");
 //   });
 // });
+//Creates a new burger
+router.post('/burger/create', function (req, res) {
+  burger.insertOne(req.body.burger_name, function() {
+      res.redirect('/index');
+  });
+});
+
+
+//Devours a Burger
+router.post('/burger/eat/:id', function (req, res) {
+  burger.updateOne(req.params.id, function() {
+      res.redirect('/index');
+  });
+});
 
 //Export routes for server.js to use.
 module.exports = router;
