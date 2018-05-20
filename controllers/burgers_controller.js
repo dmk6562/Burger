@@ -12,7 +12,7 @@ router.get('/', function (req, res) {
 
 // Index Page (displays all burgers)
 router.get('/index', function (req, res) {
-  burger.selectall(function(data) {
+  burger.selectAll(function(data) {
       var hbsObject = { burgers: data };
       //console.log(hbsObject);
       res.render('index', hbsObject);
