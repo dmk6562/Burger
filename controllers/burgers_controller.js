@@ -6,22 +6,23 @@ var router = express.Router();
 var burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
-router.get('/', function (req, res) {
-  res.render('/index');
-});
+// router.get('/', function (req, res) {
+//   res.render('/index');
+// });
 
 // Index Page (displays all burgers)
 router.get('/index', function (req, res) {
   burger.selectAll(function(data) {
       var hbsObject = { burgers: data };
-      //console.log(hbsObject);
+      
+      console.log(hbsObject);
       res.render('index', hbsObject);
   });
 });
 
 
 //Creates a new burger
-router.post('/burger/create', function (req, res) {
+router.post('/api/burgers', function (req, res) {
   burger.insertOne(req.body.burger_name, function() {
       res.render('/index');
   });
