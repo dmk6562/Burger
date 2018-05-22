@@ -1,4 +1,19 @@
 body {  
-     background-color: coral;
-  
+     background-color: peachpuff;
+     background: url('././images/burger2.jpg');
+     opacity: inherit;
+     /* background-repeat: no-repeat; */
+    
 }
+  
+h1 {
+    font-weight: bold;
+    color:#ff0000;
+}
+
+.row {
+    color:black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
